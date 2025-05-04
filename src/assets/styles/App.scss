@@ -1,0 +1,7 @@
+@import './global';
+@import "bootstrap/scss/bootstrap";
+@import './reset/theme';
+
+body {
+    background-color: var(--custom-body-bg);
+}

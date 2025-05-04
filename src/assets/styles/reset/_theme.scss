@@ -1,0 +1,48 @@
+// _theme.scss
+
+@use "sass:color";
+
+// Dark mode palette
+:root {
+    // Base colors
+    --custom-body-bg: #121212; // Djup svart bakgrund
+    --custom-body-color: #e0e0e0; // Ljusgrå text
+    --custom-border-color: #333; // Mörkare kantlinje
+
+    // Brand
+    --custom-primary: #8e44ad; // Dämpad lila för primär färg
+    --custom-secondary: #2c3e50; // Kolblå för sekundär färg
+
+    // Feedback
+    --custom-success: #27ae60; // Mjuk grön för framgång
+    --custom-danger: #c0392b; // Dämpad röd för fara
+    --custom-warning: #f39c12; // Dämpad gul för varningar
+    --custom-info: #3498db; // Klassiskt blått för information
+
+    // UI backgrounds
+    --custom-surface-1: #1e1e1e; // Mörk yta för kort och paneler
+    --custom-surface-2: #2a2a2a; // Yta för inputs och sekundära paneler
+    --custom-surface-3: #333; // Bakgrund för sekundära element
+
+    // Text variants
+    --custom-text-muted: #b2bec3; // Dämpad textfärg
+    --custom-text-light: #dfe6e9; // Ljusa textfärger för kontrast
+
+    // Cards / Panels
+    --custom-card-bg: var(--custom-surface-1); // Kortbakgrund
+    --custom-card-border-color: var(--custom-border-color); // Kortgräns
+
+    // Links
+    --custom-link-color: var(--custom-primary); // Länkens primärfärg
+    --custom-link-hover-color: #542866; // Hover-effekt för länk
+
+    // Buttons
+    --custom-btn-bg: var(--custom-primary); // Knappbakgrund
+    --custom-btn-hover-bg: #542866; // Hover-effekt för knapp
+    --custom-btn-color: #fff; // Textfärg på knappar
+
+    // Inputs
+    --custom-input-bg: var(--custom-surface-2); // Bakgrundsfärg för inputs
+    --custom-input-border-color: var(--custom-border-color); // Gränsfärg för inputs
+    --custom-input-color: var(--custom-body-color); // Textfärg för inputs
+}

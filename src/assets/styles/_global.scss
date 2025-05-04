@@ -1,0 +1,246 @@
+// global.scss
+@use './reset/theme'; // Importera vårt färgtema
+// @use 'sass:mixins'; // Importera mixins om de behövs (kan användas för layout eller återanvändbara stilar)
+
+// Global reset
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--custom-body-bg);
+    color: var(--custom-body-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0;
+    font-weight: 600;
+    color: var(--custom-text-light);
+}
+
+p {
+    margin: 0 0 1rem 0;
+    line-height: 1.5;
+    color: var(--custom-body-color);
+}
+
+a {
+    color: var(--custom-primary);
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+// ==============================
+// Layoutkomponenter
+// ==============================
+
+.theme-suggestion-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.theme-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+.theme-preview {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+// ==============================
+// Komponentklasser (med w- prefix)
+// ==============================
+
+.w-card {
+    background-color: var(--custom-surface-1);
+    border: 1px solid var(--custom-border-color);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    margin-top: 2rem;
+
+    h2 {
+        margin-bottom: 1rem;
+        font-size: 1.25rem;
+        color: var(--custom-text-light);
+    }
+
+    p {
+        color: var(--custom-text-muted);
+    }
+}
+
+.w-input,
+.w-textarea {
+    background-color: var(--custom-surface-2);
+    color: var(--custom-body-color);
+    border: 1px solid var(--custom-border-color);
+    padding: 0.75rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    width: 100%;
+    margin-top: 0.5rem;
+    margin-right: 0.5rem;
+
+    &:focus {
+        outline: none;
+        border-color: var(--custom-primary);
+        box-shadow: 0 0 4px var(--custom-primary);
+    }
+}
+
+label {
+    margin-right: 0.5rem;
+}
+
+option {
+    outline: none;
+    border-color: var(--custom-primary);
+    box-shadow: 0 0 4px var(--custom-primary);
+
+}
+
+.w-textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.w-btn {
+    background-color: var(--custom-btn-bg);
+    border: 1px solid var(--custom-btn-border-color);
+    color: var(--custom-btn-color);
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: var(--custom-btn-hover-bg);
+    }
+}
+
+.w-btn-success {
+    background-color: var(--custom-success);
+    border-color: var(--custom-success);
+    color: #fff;
+}
+
+.w-btn-danger {
+    background-color: var(--custom-danger);
+    border-color: var(--custom-danger);
+    color: #fff;
+}
+
+.w-btn-warning {
+    background-color: var(--custom-warning);
+    border-color: var(--custom-warning);
+    color: #000;
+}
+
+.w-btn-info {
+    background-color: var(--custom-info);
+    border-color: var(--custom-info);
+    color: #fff;
+}
+
+.button-group {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+// === Navbar ===
+
+.w-navbar {
+    background-color: var(--custom-surface-1);
+    border-bottom: 1px solid var(--custom-border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    margin-bottom: 2rem;
+
+    .w-navbar-logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--custom-primary);
+    }
+
+    .w-navbar-links {
+        display: flex;
+        gap: 1.5rem;
+
+        a {
+            color: var(--custom-body-color);
+            font-weight: 500;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: var(--custom-primary);
+            }
+        }
+    }
+}
+
+// === Dashboard-knappar ===
+
+.dashboard-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+
+    .w-btn {
+        min-width: 140px;
+    }
+}
+
+ul {
+    border-radius: 0.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    gap: 0.5rem;
+    background-color: var(--custom-surface-2);
+    border: 1px solid var(--custom-border-color);
+}
+
+li {
+    width: 100%;
+    text-align: center;
+    border-radius: 0.25rem;
+    background-color: var(--custom-surface-1);
+    color: var(--custom-body-color);
+    border: 1px solid var(--custom-border-color);
+}
