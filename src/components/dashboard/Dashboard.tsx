@@ -1,13 +1,10 @@
-import { defaultTags } from "../../assets/utils/datastructure";
-import { BudgetRecord } from "../../types/budgetTypes";
-import ExpenseModal from "../expenseModal/ExpenseModal";
+
 
 interface DashboardProps {
     userName: string;
     budget: number[];
-    budgetOptions: BudgetRecord[];
 }
-const DashBoard: React.FC<DashboardProps> = ({userName, budget, budgetOptions})=> {
+const DashBoard: React.FC<DashboardProps> = ({userName, budget})=> {
 
         const [total, spent, remaining] = budget;
 
@@ -20,7 +17,7 @@ const DashBoard: React.FC<DashboardProps> = ({userName, budget, budgetOptions})=
                 <p>Remaining: {remaining}kr</p>
             
             <button className="w-btn">Add expense</button> <button className="w-btn">View full report</button>
-            <ExpenseModal  tags={defaultTags} budgetOptions={budgetOptions}/>
+            
         </div>
     )
 }
